@@ -85,6 +85,24 @@ public class AlunoRepository {
 		return alunos;
 	}
 	
+	public List<Aluno> pesquisarPor(String classificacao, double nota) {
+		criarConexao();
+		MongoCollection<Aluno> alunoCollection = this.bancoDeDados.getCollection("alunos", Aluno.class);
+		MongoCursor<Aluno> resultados = null;
+
+		if(classificacao.equals("reprovados")) {
+			resultados = alunoCollection.find(Filters.lt("notas.valor", nota)).iterator();
+		}else if(classificacao.equals("aprovados")) {
+			resultados = alunoCollection.find(Filters.gte("notas.valor", nota)).iterator();
+		}
+
+		List<Aluno> alunos = popularAlunos(resultados);
+
+		fecharConexao();
+
+		return alunos;
+	}
+	
 	private List<Aluno> popularAlunos(MongoCursor<Aluno> resultados) {
 		List<Aluno> alunos = new ArrayList<>();
 
