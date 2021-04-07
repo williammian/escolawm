@@ -18,7 +18,7 @@ public class AlunoController {
 	@Autowired
 	private AlunoRepository alunoRepository;
 
-	@GetMapping("aluno/cadastrar")
+	@GetMapping("/aluno/cadastrar")
 	public String cadastrar(Model model) {
 		model.addAttribute("aluno", new Aluno());
 		return "aluno/cadastrar";
