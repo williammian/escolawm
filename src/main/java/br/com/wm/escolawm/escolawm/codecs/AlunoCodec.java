@@ -66,9 +66,11 @@ public class AlunoCodec implements CollectibleCodec<Aluno> {
 
         List<Double> coordinates = new ArrayList<Double>();
         if (contato != null) {
-	        for (Double location : contato.getCoordinates()) {
-	            coordinates.add(location);
-	        }
+        	if(contato.getCoordinates() != null) {
+		        for (Double location : contato.getCoordinates()) {
+		            coordinates.add(location);
+		        }
+        	}
 	        
 	        documento.put("contato", new Document()
 	                .append("endereco", contato.getEndereco())

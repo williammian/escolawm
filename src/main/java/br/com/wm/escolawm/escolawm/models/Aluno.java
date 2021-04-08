@@ -13,7 +13,7 @@ public class Aluno {
 	
 	private String nome;
 	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date dataNascimento;
 	
 	private Curso curso;
@@ -95,7 +95,6 @@ public class Aluno {
 		notas.add(nota);
 		aluno.setNotas(notas);
 		return aluno;
-		
 	}
 
 	public Contato getContato() {

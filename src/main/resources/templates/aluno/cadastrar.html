@@ -7,6 +7,9 @@
   <title>Escola WM</title>
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="../js/inicializar.js"></script>
+  
+  <script type="text/javascript" src="../js/googlemaps.js"></script>
+  
 </head>
 <body class="grey lighten-3">
   <div id="formularioEdicao" class="container">
@@ -33,6 +36,12 @@
               <label for="curso">Curso</label>
             </div>
           </div>
+          <div class="row">
+		    <div class="input-field col s12">
+		      <input id="endereco" type="text" class="validate" th:field="*{contato.endereco}"  />
+		      <label for="endereco">Endereço</label>
+		    </div>
+		  </div>
 
         </div> <!-- Fim SECTION Dados Basicos -->
 
@@ -47,5 +56,8 @@
   </div> <!-- Fim do formulario de edicao -->
 
   <script type="text/javascript" src="../materialize/js/materialize.min.js"></script>
+  
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgVM-KLQg8KUbBJKP8Qn0zlZLYOezt99M&amp;libraries=places&amp;callback=autoComplete"></script>
+  
 </body>
 </html>

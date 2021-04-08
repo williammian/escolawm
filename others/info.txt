@@ -1,0 +1,20 @@
+Google Cloud Platform
+
+https://developers.google.com/maps/?hl=pt-br
+
+-------------------------
+
+Ativar os serviços
+
+Maps JavaScript API
+
+Geocoding API
+
+Places API
+
+-------------------------
+
+Criar uma credencial (Chave de API)
+
+------------------------
+
